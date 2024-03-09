@@ -77,16 +77,7 @@ end
 		end
 		return Hook(unpack(Args))
 	end))
-local hooked
-       hooked = hookfunction(getrenv().getproxy, newcclosure(function(...)
-		local Args = {...}
-		if not checkcaller() then
-			if (GetFullName(getcallingscript()) == ".ClientMover" and Args[1].Name == "Client") then
-				return warn('script exceeded timeout', 2)
-			end
-		end
-		return hooked(unpack(Args))
-	end)) 
+
 	print('Adonis anticheat patched | ' .. rstring(math.random(1,10)))
 	for i, connection in pairs(getconnections(game.LogService.MessageOut)) 
 do
