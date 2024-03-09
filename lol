@@ -136,7 +136,7 @@ if key then
     local uh = {}
 
     function uh.hub()
-     
+     Bypass_Everything()
         local Workspace = game:GetService("Workspace")
         local RepStorage = game:GetService("ReplicatedStorage")
         local RunService = game:GetService("RunService")
