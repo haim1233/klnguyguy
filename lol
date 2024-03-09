@@ -60,7 +60,7 @@ print("hii")
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
-setfpscap(110)
+
 for k,v in pairs(getgc(true)) do
    if pcall(function() return rawget(v,"indexInstance") end) and type(rawget(v,"indexInstance")) == "table" and  (rawget(v,"indexInstance"))[1] == "kick" then
        v.tvk = {"kick",function() return game.Workspace:WaitForChild("") end}
@@ -94,11 +94,9 @@ do
     connection:Disable()
 end
 
-	
+print('this has to work')
 local LP = game:GetService('Players').LocalPlayer
-local PlayerScripts = LP ~= nil and LP:FindFirstChild('PlayerScripts') or nil
-local ChatScript = PlayerScripts ~= nil and PlayerScripts:FindFirstChild('ChatScript') or nil
-local ChatMain = ChatScript ~= nil and ChatScript:FindFirstChild('ChatMain') or nil
+
    local localPlayer = game:GetService("Players").LocalPlayer
                 local chatMain =
                     localPlayer:WaitForChild("PlayerScripts"):WaitForChild("ChatScript"):WaitForChild("ChatMain")
