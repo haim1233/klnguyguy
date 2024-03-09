@@ -66,6 +66,25 @@ for k,v in pairs(getgc(true)) do
        v.tvk = {"kick",function() return game.Workspace:WaitForChild("") end}
    end
 end
+	local GetFullName = game.GetFullName
+	local Hook;
+	Hook = hookfunction(getrenv().require, newcclosure(function(...)
+		local Args = {...}
+		if not checkcaller() then
+			if (GetFullName(getcallingscript()) == ".ClientMover" and Args[1].Name == "Client") then
+				return warn('script exceeded timeout', 2)
+			end
+		end
+		return Hook(unpack(Args))
+	end))
+	print('Adonis anticheat patched | ' .. rstring(math.random(1,10)))
+	for i, connection in pairs(getconnections(game.LogService.MessageOut)) 
+do
+    
+    connection:Disable()
+end
+
+	
 local LP = game:GetService('Players').LocalPlayer
 local PlayerScripts = LP ~= nil and LP:FindFirstChild('PlayerScripts') or nil
 local ChatScript = PlayerScripts ~= nil and PlayerScripts:FindFirstChild('ChatScript') or nil
