@@ -86,7 +86,7 @@ local hooked
 			end
 		end
 		return hooked(unpack(Args))
-	end))
+	end)) 
 	print('Adonis anticheat patched | ' .. rstring(math.random(1,10)))
 	for i, connection in pairs(getconnections(game.LogService.MessageOut)) 
 do
