@@ -26,4 +26,5 @@ end
 text(textforbreaking,9e9*9e9)
 wait(1)
 text(strin,img)
+wait(0.8)
 abd()
